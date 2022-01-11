@@ -10,10 +10,10 @@ export default function Layout(props: LayoutProps){
 
   return (
     <div className={`
-      flex flex-col w-3/5 bg-white text-gray-800 rounded-md
+      flex flex-col w-3/5 bg-gray-900 text-gray-100 rounded-xl
     `}>
       <Title>{props.title}</Title>
-      <div className="px-5 py-3">
+      <div className="p-5">
         {props.children}
       </div>
     </div>
