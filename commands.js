@@ -1,7 +1,7 @@
 [
   {
     barraReta: '      || ',
-    interrogacao: '     ?',
+    interrogacao: '   ?',
     templateString: ' `` '
   }
 ]
