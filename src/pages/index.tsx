@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Table from '../components/Table';
 import Client from '../core/Client';
+import Button from '../components/Button';
 
 export default function Home() {
 
@@ -26,6 +27,9 @@ export default function Home() {
       bg-gradient-to-r from-indigo-500 to-indigo-800 text-white
     `}>
       <Layout title="Simple Registration">
+        <div className='flex justify-end'>
+          <Button className='mb-4'>New Client</Button>
+        </div>
         <Table 
           clients={clients} 
           selectedClient={selectedClient} 

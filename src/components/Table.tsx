@@ -26,7 +26,7 @@ export default function Table(props){
   function renderData(){
     return props.clients?.map((client, i) => { 
       return (
-        <tr key={client.id} className='bg-gray-200 even:bg-gray-300 hover:bg-gray-400'>
+        <tr key={client.id} className='bg-gray-700 even:bg-gray-800 hover:bg-gray-900'>
           <td className='text-left px-4 py-2'>{client.id}</td>
           <td className='text-left px-4 py-2'>{client.name}</td>
           <td className='text-left px-4 py-2'>{client.age}</td>
@@ -40,11 +40,11 @@ export default function Table(props){
     return (
       <td className='text-center px-4 py-2'>
         {props.selectedClient ? (
-          <button onClick={() => props.selectedClient?.(client)} className='text-green-700 mr-1 rounded-full hover:bg-gray-300 p-1'>{editIcon}</button>
+          <button onClick={() => props.selectedClient?.(client)} className='text-green-600 mr-1 rounded-full hover:bg-gray-800 p-1'>{editIcon}</button>
         ) : false}
         
         {props.excludedClient ? (
-          <button onClick={() => props.excludedClient?.(client)} className='text-red-700 ml-1 rounded-full hover:bg-gray-300 p-1'>{trashIcon}</button>
+          <button onClick={() => props.excludedClient?.(client)} className='text-red-600 ml-1 rounded-full hover:bg-gray-800 p-1'>{trashIcon}</button>
         ) : false}
       </td>
     );
@@ -52,9 +52,9 @@ export default function Table(props){
 
   return (
 
-    <table className='w-full rounded-xl overflow-hidden text-gray-900'>
+    <table className='w-full rounded-xl overflow-hidden text-gray-300'>
       <thead className={`
-        bg-gradient-to-r from-indigo-500 to-indigo-800 text-white 
+        bg-gradient-to-r from-indigo-500 to-indigo-800 text-gray-200 
         
       `}>
         {renderHeader()}
