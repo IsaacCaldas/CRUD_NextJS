@@ -22,4 +22,23 @@ a {
   text-decoration: none;
 }
 
+.indigo{
+  background-color: #6A5ACD;
+}
+.indigo:hover{
+  background-color: #4c438b;
+}
+.green {
+  background-color: #259b25;
+}
+.green:hover {
+  background-color: #196d19;
+}
+.red {
+  background-color: #bf1b1b;
+}
+.red:hover {
+  background-color: #9c1919;
+}
+
 

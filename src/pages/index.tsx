@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import Table from '../components/Table';
 import Client from '../core/Client';
 import Button from '../components/Button';
+import Form from '../components/Form';
 
 export default function Home() {
 
@@ -28,7 +29,7 @@ export default function Home() {
     `}>
       <Layout title="Simple Registration">
         <div className='flex justify-end'>
-          <Button className='mb-4'>New Client</Button>
+          <Button className='mb-3 indigo'>New Client</Button>
         </div>
         <Table 
           clients={clients} 
@@ -36,6 +37,7 @@ export default function Home() {
           excludedClient={excludedClient}
         >
         </Table>
+        <Form client={clients[2]}></Form>
       </Layout>
     </div>
   )
