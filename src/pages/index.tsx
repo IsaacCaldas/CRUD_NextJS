@@ -1,41 +1,21 @@
-import React, { useState } from 'react';
-
 import Layout from '../components/Layout';
 import Table from '../components/Table';
-import Client from '../core/Client';
-import Button from '../components/Button';
 import Form from '../components/Form';
+import Button from '../components/Button';
+import useClients from '../hooks/useClients';
 
 export default function Home() {
 
-  const [client, setClient] = useState<Client>(Client.empty());
-  const [visible, setVisible] = useState<'table' | 'form'>('table');
-
-
-  const clients = [
-    new Client('Isaac', 18, '1'),
-    new Client('Ana', 34, '2'),
-    new Client('Jorge', 66, '3'),
-    new Client('Josivaldo', 54, '4'),
-    new Client('Tereza', 45, '5'),
-  ]
-
-  function selectedClient(client: Client){
-    setClient(client);
-    setVisible('form');
-  }
-  function excludedClient(client: Client){
-    console.log(`Cliente excluído: ${client.name}`);
-  }
-
-  function newClient(client: Client){
-    setClient(Client.empty());
-    setVisible('form');
-  }
-
-  function saveClient(client: Client){
-    setVisible('table');
-  }
+  const {
+    client,
+    clients,
+    newClient,
+    saveClient,
+    excludedClient,
+    selectedClient,
+    tableVisible,
+    showTable,
+  } = useClients();
 
   return (
 
@@ -44,7 +24,7 @@ export default function Home() {
       bg-gradient-to-r from-indigo-500 to-indigo-800 text-white
     `}>
       <Layout title="Simple Registration">
-        {visible === 'table' ? (
+        {tableVisible ? (
           <>
             <div className='flex justify-end'>
               <Button 
@@ -60,12 +40,12 @@ export default function Home() {
               excludedClient={excludedClient}
             >
             </Table>
-        </>
+          </>
         ) : (
-          <Form 
+          <Form
             client={client} 
             changedClient={saveClient}
-            canceled={() => setVisible('table')}
+            canceled={showTable}
           >
           </Form>
         ) }

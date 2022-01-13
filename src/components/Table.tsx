@@ -54,7 +54,7 @@ export default function Table(props){
 
     <table className='w-full rounded-xl overflow-hidden text-gray-300'>
       <thead className={`
-        bg-gradient-to-r from-indigo-500 to-indigo-800 text-gray-200 
+        bg-gradient-to-r from-indigo-600 to-indigo-800 text-gray-200 
         
       `}>
         {renderHeader()}
