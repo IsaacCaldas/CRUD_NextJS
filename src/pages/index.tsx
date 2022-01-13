@@ -21,7 +21,7 @@ export default function Home() {
 
     <div className={`
       flex h-screen justify-center items-center
-      bg-gradient-to-r from-indigo-500 to-indigo-800 text-white
+      bg-gradient-to-rfrom-indigo-500 to-indigo-800 text-white
     `}>
       <Layout title="Simple Registration">
         {tableVisible ? (
